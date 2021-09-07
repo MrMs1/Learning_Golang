@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"lesson/mylib"
 	"os/user"
 	"time"
 )
@@ -208,5 +209,14 @@ func main() {
 	hoge(s...)
 
 	// exercise
-	exercise1()
+	mylib.Exercise1()
+
+	// Iflesson
+	mylib.Iflesson()
+
+	// Forlesson
+	mylib.Forlesson()
+
+	// Rangelesson
+	mylib.Rangelesson()
 }
