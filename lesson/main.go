@@ -219,4 +219,13 @@ func main() {
 
 	// Rangelesson
 	mylib.Rangelesson()
+
+	// Switchlesson
+	mylib.Switchlesson()
+
+	// Defer
+	mylib.Deferlesson()
+
+	// Logger
+	mylib.Loggerlesson()
 }

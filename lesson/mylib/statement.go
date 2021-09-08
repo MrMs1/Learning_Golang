@@ -1,6 +1,10 @@
 package mylib
 
-import "fmt"
+import (
+	"fmt"
+	"os"
+	"time"
+)
 
 func by2(num int) string {
 	if num%2 == 0 {
@@ -97,5 +101,54 @@ func Rangelesson() {
 	for _, v := range m {
 		fmt.Println(v)
 	}
+
+}
+
+func getOsName() string {
+	return "mac"
+}
+
+func Switchlesson() {
+	//os := getOsName()
+	switch os := getOsName(); os {
+	case "mac":
+		fmt.Println("Mac!!")
+	case "windows":
+		fmt.Println("Windows!!")
+	default:
+		fmt.Println("Default!!", os)
+	}
+
+	t := time.Now()
+	fmt.Println(t.Hour())
+	switch {
+	case t.Hour() < 12:
+		fmt.Println("Morning")
+	case t.Hour() < 17:
+		fmt.Println("Afternoon")
+	}
+}
+
+func foo() {
+	defer fmt.Println("world foo")
+
+	fmt.Println("hello foo")
+}
+
+func Deferlesson() {
+	foo()
+
+	defer fmt.Println("world")
+
+	fmt.Println("hello")
+
+	file, _ := os.Open("./main.go")
+	defer file.Close()
+	data := make([]byte, 100)
+	file.Read(data)
+	fmt.Println(string(data))
+}
+
+func Loggerlesson() {
 
 }
