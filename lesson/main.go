@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"lesson/exercise"
 	"lesson/mylib"
 	"os/user"
 	"time"
@@ -209,7 +210,7 @@ func main() {
 	hoge(s...)
 
 	// exercise
-	mylib.Exercise1()
+	exercise.Exercise1()
 
 	// Iflesson
 	mylib.Iflesson()
@@ -227,5 +228,36 @@ func main() {
 	mylib.Deferlesson()
 
 	// Logger
-	mylib.Loggerlesson()
+	//mylib.Loggerlesson()
+
+	// ErrorHandling
+	//mylib.ErrHandlinglesson()
+
+	// PanicRecover
+	mylib.PanicRecoverlesson()
+
+	// exercise2
+	exercise.Exercise2_1()
+	exercise.Exercise2_2()
+
+	// Pointerlesson
+	mylib.Pointerlesson()
+
+	// NewMakelesson
+	mylib.NewMakelesson()
+
+	// Structlesson
+	mylib.Structlesson()
+
+	// Methodslesson
+	mylib.Methodslesson()
+
+	// Interfacelesson
+	mylib.Interfacelesson()
+
+	// Typeassertionlesson
+	mylib.TypeAssertionlesson()
+
+	// Stringerlesson
+	mylib.Stringerlesson()
 }

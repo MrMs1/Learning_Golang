@@ -2,6 +2,7 @@ package mylib
 
 import (
 	"fmt"
+	"log"
 	"os"
 	"time"
 )
@@ -149,6 +150,60 @@ func Deferlesson() {
 	fmt.Println(string(data))
 }
 
-func Loggerlesson() {
+/*
+func LoggingSettings(logFile string){
+	logfile, _ := os.OpenFile(logFile, os.O_RDWR|os.O_CREATE|os.O_APPEND, 0666)
+	multiLogFile := io.MultiWriter(os.Stdout, logfile)
+	log.SetFlags(log.Ldate | log.Ltime | log.Lshortfile)
+	log.SetOutput(multiLogFile)
+}
+*/
 
+func Loggerlesson() {
+	//LoggingSettings("test.log")
+	_, err := os.Open("dddd")
+	if err != nil {
+		log.Fatalln("Exit", err)
+	}
+
+	log.Println("logging!")
+	log.Printf("%T %v ", "test", "test")
+
+	log.Fatalln("error!!") // 最初のFatalの時点で実行は終了する
+	log.Fatalf("%T %v", "test", "teT")
+}
+
+func ErrHandlinglesson() {
+	file, err := os.Open("./mai.go")
+	if err != nil {
+		log.Fatal("Error!")
+	}
+	defer file.Close()
+	data := make([]byte, 100)
+	count, err := file.Read(data) // 2つ目のerrだが、1つ目のerrに上書きしている
+	if err != nil {
+		log.Fatalln("Error")
+	}
+	fmt.Println(count, string(data))
+
+	if err := os.Chdir("test"); err != nil {
+		log.Fatalln("Error")
+	}
+}
+
+func thirdPartyConnectDB() {
+	panic("Unable to connect database!") //goではpanicを自分で使わないように推奨されている
+}
+
+func save() {
+	defer func() {
+		s := recover()
+		fmt.Println(s)
+	}()
+	thirdPartyConnectDB()
+}
+
+func PanicRecoverlesson() {
+	save()
+	fmt.Println("OK?")
 }
