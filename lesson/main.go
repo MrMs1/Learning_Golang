@@ -285,4 +285,10 @@ func main() {
 
 	// FanoutFaninlesson
 	mylib.FanoutFaninlesson()
+
+	//ChannelSelectlesson
+	// mylib.ChannelSelectlesson()
+
+	//DefaultSelectionlesson
+	mylib.DefaultSelectionlesson()
 }
