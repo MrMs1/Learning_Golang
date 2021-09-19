@@ -260,4 +260,26 @@ func main() {
 
 	// Stringerlesson
 	mylib.Stringerlesson()
+
+	// CustomErrorlesson
+	mylib.CustomErrorlesson()
+
+	// exercise3
+	exercise.Exercise3_1()
+	exercise.Exercise3_2()
+
+	// Goroutine
+	mylib.Goroutine()
+
+	// Channellesson
+	mylib.Channellesson()
+
+	// BufferedChannelslesson
+	mylib.BufferedChannelslesson()
+
+	//channellesson2
+	mylib.Channellesson2()
+
+	//producer&consumer
+	mylib.ProducerConsumerlesson()
 }
