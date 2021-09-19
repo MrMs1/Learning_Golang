@@ -282,4 +282,7 @@ func main() {
 
 	//producer&consumer
 	mylib.ProducerConsumerlesson()
+
+	// FanoutFaninlesson
+	mylib.FanoutFaninlesson()
 }
