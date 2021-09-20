@@ -22,9 +22,9 @@ func normal(s string) {
 
 func Goroutine() {
 	var wg sync.WaitGroup
-	wg.Add(1)
+	wg.Add(1) // 並列処理の数をセット
 	go goroutine("world", &wg)
 	normal("hello")
 	//time.Sleep(1000 * time.Millisecond)
-	wg.Wait()
+	wg.Wait() //Doneが呼ばれるまで待つ
 }

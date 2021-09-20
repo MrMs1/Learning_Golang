@@ -291,4 +291,10 @@ func main() {
 
 	//DefaultSelectionlesson
 	mylib.DefaultSelectionlesson()
+
+	//syncmutexlesson
+	mylib.SyncMutexlesson()
+
+	// Exercise4
+	exercise.Exercise4()
 }
