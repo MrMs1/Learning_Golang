@@ -297,4 +297,7 @@ func main() {
 
 	// Exercise4
 	exercise.Exercise4()
+
+	//Taliblesson
+	mylib.Taliblesson()
 }
