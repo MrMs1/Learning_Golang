@@ -1,0 +1,5 @@
+package mylib
+
+func Iota() {
+
+}
