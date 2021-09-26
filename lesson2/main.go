@@ -3,6 +3,7 @@ package main
 import (
 	"lesson2/mylib"
 	"lesson2/nwlib"
+	"lesson2/thirdpartylib"
 )
 
 func main() {
@@ -14,4 +15,8 @@ func main() {
 	mylib.Ioutil()
 	nwlib.HTTP()
 	nwlib.UnmarshalMarshal()
+	nwlib.Hmac()
+	thirdpartylib.Semaphore()
+	thirdpartylib.Ini()
+	thirdpartylib.Talib()
 }

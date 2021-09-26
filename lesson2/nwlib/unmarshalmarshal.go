@@ -3,6 +3,7 @@ package nwlib
 import (
 	"encoding/json"
 	"fmt"
+	"lesson2/mylib"
 )
 
 type T struct {
@@ -40,6 +41,9 @@ type Person struct {
 // }
 
 func UnmarshalMarshal() {
+	mylib.StartLog()
+	defer mylib.EndLog()
+
 	b := []byte(`{"name":"mike","age":20,"nicknames":["a","b","c"]}`)
 	var p Person
 	if err := json.Unmarshal(b, &p); err != nil {
