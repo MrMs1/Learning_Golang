@@ -2,10 +2,14 @@ package main
 
 import (
 	"io"
+	"lesson5/block"
+	"lesson5/wallet"
 	"log"
 	"net/http"
 	"strconv"
 )
+
+var cache map[string]*block.Blockchain = make(map[string]*block.Blockchain)
 
 type BlockchainServer struct {
 	port uint16
@@ -17,6 +21,19 @@ func NewBlockchainServer(port uint16) *BlockchainServer {
 
 func (bcs *BlockchainServer) Port() uint16 {
 	return bcs.port
+}
+
+func (bcs *BlockchainServer) GetBlockchain() *block.Blockchain {
+	bc, ok := cache["blockchain"]
+	if !ok {
+		minersWallet := wallet.NewWallet()
+		bc = block.NewBlockchain(minersWallet.BlockchainAddress(), bcs.port)
+		cache["blockchain"] = bc
+		log.Printf("private_key %v", minersWallet.PrivateKeyStr())
+		log.Printf("public_key %v", minersWallet.PublicKeyStr())
+		log.Printf("blockchain_address %v", minersWallet.BlockchainAddress())
+	}
+	return bc
 }
 
 func HelloWorld(w http.ResponseWriter, req *http.Request) {
