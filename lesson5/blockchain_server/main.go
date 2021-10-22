@@ -6,7 +6,7 @@ import (
 )
 
 func init() {
-	log.SetPrefix("Blockchain: ")
+	log.SetPrefix("Blockchain Server: ")
 }
 func main() {
 	port := flag.Uint("port", 5000, "TCP Port Number for Blockchain Server")
